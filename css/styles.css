@@ -176,3 +176,79 @@ a{
     justify-content: center;
     align-items: center;
 }
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+/* Buttons */
+
+/* clasa principala pentru toate butoanele */
+.btn{
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 2rem 3rem;
+    border: 0;
+    border-radius: 40px;
+    /* cursor in forma de mana cand ne ducem pe buton */
+    cursor: pointer;
+    /* sa nu fie separat textul butonului pe mai multe randuri */
+    white-space: nowrap;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.btn--primary{
+    background: var(--color-primary);
+    color:#fff;
+}
+
+.btn--secondary{
+    background: var(--color-secondary);
+    color:#fff;
+}
+
+.btn--accent{
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.btn--primary:hover{
+    background: #3a8ffd;
+}
+
+.btn--secondary:hover{
+    background: #00c8eb;
+}
+
+.btn--accent:hover{
+    background: #ec3000;
+}
+
+/* pentru crearea butoanelor ce ocupa toata latimea div-ului */
+.btn--block{
+    width: 100%;
+    display: inline-block;
+}
+
+@media screen and (min-width:1024px) {
+    .btn{
+        font-size: 1.5rem;
+    }
+ }
+
+/* pentru a aseza un buton in mijloc */
+
+ /* .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .btn-center{
+    width: 200px;
+    display: inline-flex;
+    justify-content: center;
+
+ } */
