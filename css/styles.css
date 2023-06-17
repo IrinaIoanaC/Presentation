@@ -243,6 +243,12 @@ a{
     border: 2px solid var(--color-headings);
 }
 
+/* o clasa separata pt callouts */
+.btn--long{
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
 .btn--outline:hover{ 
     background: var(--color-headings);
     color: #fff;
@@ -484,12 +490,22 @@ a{
 }
 
 
-/* Grid */
-.grid{
-   display: grid; 
-   grid-template-areas: "header header header" "main main main" "footer footer footer"; 
-   grid-template-columns: 1fr 1fr .5fr;
-}
+/* Grids */
+.grid {
+    display: grid;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .grid--1x2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .grid--1x3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 
 
 /* Testimonial */
@@ -524,5 +540,48 @@ a{
     .testimonial .quote{
         margin-left: 6rem;
         margin-right: 0;
+    }
+}
+
+.callout{
+    padding: 4rem;
+    border-radius: 5px;
+}
+
+.callout--primary{
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.callout__heading{
+    color: #fff;
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+/* este recomandata proprietatea self pentru un item individual */
+.callout .btn{
+    justify-self: center;
+    align-self:  center;
+} 
+
+.callout__content{
+    text-align: center;
+}
+
+@media screen and (min-width: 768px){
+
+    /* pentru a aloca tot spatiul necesar coloanei cu scrisul, iar butonul sa ocupe cat spatiu e necesar */
+    .callout .grid--1x2{
+        grid-template-columns: 1fr auto;
+    }
+
+    .callout__content{
+        text-align: left;
+    }
+
+    .callout .btn{
+        justify-self: start;
+        margin: 0 2rem;
     }
 }
