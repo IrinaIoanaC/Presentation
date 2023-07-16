@@ -255,6 +255,11 @@ a{
     color: #fff;
 }
 
+.btn--stretched {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
 .btn--primary:hover{
     background: #3a8ffd;
 }
