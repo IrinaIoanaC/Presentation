@@ -8,6 +8,14 @@
     --color-body-darker:#5c5577;
     --border-radius: 30px;
 }
+
+/* in order to have the width 100% of viewport, including padding */
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+
 /* Typography */
 html{
     /* default font size is 16px, so we want a fixed value 10px 62.5%*16px=10px */
@@ -166,6 +174,7 @@ a{
     height: 40px;    
 }
 
+/* for testimonial */
 .icon--small{
     width: 30px;
     height: 30px;
@@ -173,9 +182,10 @@ a{
 
 .icon--primary{
     fill: var(--color-primary);
-    
+    /* to change the color of the svg outline */
 }
 
+/* for testimonial */
 .icon--white{
     fill: white;
 }
@@ -186,24 +196,24 @@ a{
 }
 
 
-
+/* Bcs all icons are inside a circle, we create a container-parent for these */
 .icon-container{
     background-color: #f3f9fa;
     height: 64px;
     width: 64px;
     border-radius: 100%;
+
+    /* To center the svg-icons, we need to use the flex for the parent-container */
     display: inline-flex;
     justify-content: center;
     align-items: center;
 }
 
+/* for testimonial */
 .icon-container--accent{
     background: var(--color-accent);
 }
 
-*, *::after, *::before{
-    box-sizing: border-box;
-}
 
 /* Buttons */
 
@@ -212,11 +222,18 @@ a{
     font-size: 1.8rem;
     font-weight: 600;
     text-transform: uppercase;
+
+    /* pentru a adauga spatiu intre scris-continut si border */
     padding: 2rem 3rem;
+
+    /* pentru a elimina borderul by def al butonului */
     border: 0;
+
     border-radius: 40px;
-    /* cursor in forma de mana cand ne ducem pe buton */
+
+    /* cursor in forma de mana cand ne ducem pe buton,altfel nu functioneaza, decat ANCHOR are by default acest tip de cursor */
     cursor: pointer;
+
     /* sa nu fie separat textul butonului pe mai multe randuri */
     white-space: nowrap;
     text-align: center;
@@ -262,7 +279,7 @@ a{
     background: var(--color-headings);
     color: #fff;
 }
-
+ 
 .btn--stretched {
     padding-left: 6rem;
     padding-right: 6rem;
@@ -294,18 +311,19 @@ a{
 
 /* pentru a aseza un buton in mijloc */
 
- /* .center-container {
+ .center-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
   }
 
  .btn-center{
     width: 200px;
     display: inline-flex;
+    /* pentru a centra continutul din interiorul butonului */
     justify-content: center;
 
- } */
+ }
 
  /* Inputs */
 
@@ -337,6 +355,8 @@ a{
 }
 
 .input-group .btn{
+
+    /* suprascriem setarea anterioara pentru marginea setata pt butonul normal 1rem 0, deoarece este spatiul prea mult in acest caz */
     margin: 4px;
 }
 
@@ -349,13 +369,19 @@ a{
  /* Cards */
 
  .card{
-    border-radius: 7px;
+    /* rotunjire chenar */
+    border-radius: 7px; 
+
+    /* adaugare umbra gri */
     box-shadow: 0 0 20px 10px #f3f3f3;
+
     /* pentru a nu mai face background-ul nerotunjit */
     overflow: hidden;
+    min-width: 200px;
  }
 
  .card__header, .card__body{
+    /* adaugare distanta intre scris si border */
     padding: 2rem 3rem;
  }
 
@@ -376,7 +402,9 @@ a{
  /* Plans */
 
  .plan{
+    /* pentru a putea avea loc transformarea "copilului", trebuie adaugata proprietatea tranzitie parintelui */
     transition: transform 0.2s ease-out;
+    min-width: 300px;
  }
 
  .plan__name{
@@ -405,10 +433,12 @@ a{
  }
 
  .plan .list__item{
+    /* adaugam margine pentru fiecare element din lista */
     margin-bottom: 2rem;
  }
 
  .plan--popular{
+    /* se adauga optiunea de transform */
    transform: scale(1.1); 
  }
 
@@ -473,7 +503,7 @@ a{
 /* Quotes */
 
 .quote{
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-style: italic;
     color: var(--color-body-darker);
     line-height: 1.3;    
@@ -524,12 +554,14 @@ a{
     display: grid;
   }
   
+  /* breakpoint for tablets */
   @media screen and (min-width: 768px) {
     .grid--1x2 {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   
+  /* breakpoint for wider screens, if we want 3-column grid */
   @media screen and (min-width: 1024px) {
     .grid--1x3 {
       grid-template-columns: repeat(3, 1fr);
@@ -544,17 +576,21 @@ a{
 }
 
 .testimonial__image{
+    /* for the svg to be positioned relatively to the image, not the page */
     position: relative;
     margin: 0 3rem;
 }
 
 .testimonial__image > img {
+    /* in order to have equal distribution of columns in the grid component */
     width: 100%;
 }
 
 .testimonial__image > .icon-container{
     position: absolute; 
     top: 3rem;
+
+    /* in order to have the icon in the middle of the image, we divide the icon-container width:64px by 2 */
     right: -32px;
 }
  
@@ -571,6 +607,8 @@ a{
         margin-right: 0;
     }
 }
+
+/* Callouts */
 
 .callout{
     padding: 4rem;
@@ -609,6 +647,7 @@ a{
         text-align: left;
     }
 
+    /* pentru a alinia butonul cat mai aproape de content */
     .callout .btn{
         justify-self: start;
         margin: 0 2rem;
@@ -725,7 +764,7 @@ a{
 
 .nav.collapsible--expanded .nav__toggler{
     opacity: 1;
-    box-shadow: 0 0 0 3 px #666;
+    box-shadow: 0 0 0 3px #646363;
     border-radius: 5px;
 }
 
@@ -761,7 +800,8 @@ a{
 .hero__tagline{
     font-size: 2rem;
     color: #b9c3cf;
-    letter-spacing: 1px;    
+    letter-spacing: 1px; 
+    margin: 2rem 0 5rem;  
 }
 
 .hero__image{
