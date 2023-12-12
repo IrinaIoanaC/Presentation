@@ -232,7 +232,7 @@ a{
     text-transform: uppercase;
 
     /* pentru a adauga spatiu intre scris-continut si border */
-    padding: 2rem 3rem;
+    padding: 2rem 4vw;
 
     /* pentru a elimina borderul by def al butonului */
     border: 0;
@@ -360,6 +360,7 @@ a{
     border: 0;
     flex-grow: 1;
     padding: 1.5rem 2rem;
+    width: 0;
 }
 
 .input-group .btn{
@@ -666,7 +667,7 @@ a{
 /* Collapsibles=pliabile */
 .collapsible__header{
     display: flex;
-    justify-content: space-between;  /*adaugam spatiu intre elemente si a le duce in margini*/
+    justify-content: space-between;  /*adauga spatiu intre elemente si a le duce in margini*/
 }
 
 .collapsible__heading{
@@ -838,13 +839,14 @@ a{
 
 .block-domain__prices{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2,6rem);
     font-size: 2rem;
     font-weight: 600;
     justify-items: center;
     max-width: 700px;
     margin: 0 auto;
+    color: var(--color-headings);
 }
 
 @media screen  and (min-width:768px) {
